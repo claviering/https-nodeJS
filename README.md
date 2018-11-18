@@ -27,7 +27,7 @@ openssl req -new -config server.conf -out server.csr
 ```
 ## 签发证书
 创建一个v3.ext文件，以创建一个X509 v3证书。注意我们指定了subjectAltName选项
-````
+```
 openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 3650 -sha256 -extfile v3.ext
 ```
 
