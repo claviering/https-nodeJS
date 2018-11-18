@@ -27,10 +27,10 @@ app.get('/', function (req, res) {
 
 httpServer.listen(9001, () => {
   console.log('Example http listening on port 9001!');
-  console.log('http://127.0.0.1:9001');
+  console.log('http://localhost:9001');
 });
 
 httpsServer.listen(9443, () => {
   console.log('Example https listening on port 9443!');
-  console.log('https://127.0.0.1:9443');
+  console.log('https://localhost:9443');
 });
