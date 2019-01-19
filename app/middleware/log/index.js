@@ -28,8 +28,7 @@ module.exports = async (req, res, next) => {
   await next()
   const responseTime = Date.now() - start;
   const logMessage = JSON.stringify(Object.assign(baseInfo, client, {
-    responseTime: `${responseTime/1000}s`,
-    headersSent:  req.headersSent
+    responseTime: `${responseTime/1000}s`
   }))
   log.info(logMessage)
 }
