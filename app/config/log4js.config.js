@@ -1,7 +1,7 @@
 let appenders = {
   cheese: {
-    type: 'dateFile',
-    filename: `../../logs/nodeHttps-node-log`,
+    type: 'datefile',
+    filename: `logs/nodeHttps-node-log`,
     pattern: '-yyyy-MM-dd.log',
     alwaysIncludePattern: true
   },
