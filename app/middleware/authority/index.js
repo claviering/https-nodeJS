@@ -1,0 +1,1 @@
+exports.authToken = require('./authToken');

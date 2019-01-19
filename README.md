@@ -2,6 +2,8 @@
 
 openssl 1.1.1 版本
 
+node v10
+
 ## 创建根证书
 ```
 openssl version -a

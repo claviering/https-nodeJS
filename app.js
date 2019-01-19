@@ -1,36 +1,12 @@
-const express = require('express');
-const http = require('http');
-const https = require('https');
-const fs = require('fs');
-const app = express();
+const ip = require('ip');
+const app = require('express')()
+const debug = require('debug')('app')
+const router = require('./app/router')
+const config = require('./app/config');
+const middleware = require('./app/middleware');
+const httpsServer = require('./app/middleware/https')
 
-// https 配置密钥和证书
-const options = {
-  key: fs.readFileSync('./server.key'),
-  cert: fs.readFileSync('./server.crt'),
-  passphrase: '123456'
-};
+middleware(app)
+router(app)
 
-//创建http与HTTPS服务器
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(options, app);
-
-//可以根据请求判断是http还是https
-app.get('/', function (req, res) {
-  if(req.protocol === 'https') {
-      res.send('This is https visit!');
-  }
-  else {
-      res.send('This is http visit!');
-  }
-});
-
-httpServer.listen(9001, () => {
-  console.log('Example http listening on port 9001!');
-  console.log('http://localhost:9001');
-});
-
-httpsServer.listen(9443, () => {
-  console.log('Example https listening on port 9443!');
-  console.log('https://localhost:9443');
-});
+httpsServer(app).listen(config.port, debug(`https://localhost:${config.port}\nhttps://${ip.address()}:${config.port}`))
