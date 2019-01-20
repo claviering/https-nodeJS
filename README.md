@@ -4,6 +4,22 @@ openssl 1.1.1 版本
 
 node v10
 
+## pm2 监控程序
+
+```
+npm i -D pm2
+npm i -g pm2
+pm2 start npm -- run dev
+pm2 list
+pm2 show id
+pm2 monit
+pm2 logs
+pm2 reload all
+pm2 stop     <app_name|id|'all'|json_conf>
+pm2 restart  <app_name|id|'all'|json_conf>
+pm2 delete   <app_name|id|'all'|json_conf>
+```
+
 ## 创建根证书
 ```
 openssl version -a
