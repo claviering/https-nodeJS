@@ -4,7 +4,7 @@ const token = require('../utils/token');
 
 module.exports = {
   default: (req, res) => {
-    res.send('hello')
+    res.send('hello world')
   },
   checkToken: async (req, res) => {
     try {
