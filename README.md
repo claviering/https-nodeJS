@@ -20,6 +20,14 @@ pm2 restart  <app_name|id|'all'|json_conf>
 pm2 delete   <app_name|id|'all'|json_conf>
 ```
 
+## 脚本创建证书
+
+开发环境
+
+./app/env/dev/gencert.sh
+
+需要配置 `rootCA.conf` 和 `server.conf` 生产根证书, 前面证书
+
 ## 创建根证书
 ```
 openssl version -a

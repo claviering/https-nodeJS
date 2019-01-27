@@ -10,6 +10,6 @@ const server = require('./app/middleware/spdy');
 middleware(app)
 router(app)
 
-httpsServer(app).listen(config.port, debug(`https://localhost:${config.port}\nhttps://${ip.address()}:${config.port}`))
+httpsServer(app).listen(config.port, debug(`http1.1 https://localhost:${config.port}\nhttps://${ip.address()}:${config.port}`))
 const http2Port = config.port + 1
-server(app).listen(http2Port, debug(`https://localhost:${http2Port}\nhttps://${ip.address()}:${http2Port}`))
+server(app).listen(http2Port, debug(`http2.0 https://localhost:${http2Port}\nhttps://${ip.address()}:${http2Port}`))
