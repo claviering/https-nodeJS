@@ -7,4 +7,3 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 DNS.3 = 127.0.0.1
 DNS.2 = www.example.com
-DNS.2 = www.cuicui.com

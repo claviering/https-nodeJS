@@ -10,8 +10,8 @@ module.exports = {
     passphrase: '123456',
     // key: './app/env/dev/server.key',
     // cert: './app/env/dev/server.crt',
-    key: './app/env/dev-ecc/domain.key',
-    cert: './app/env/dev-ecc/domain.crt',
+    key: './app/env/dev-ecc/server.key',
+    cert: './app/env/dev-ecc/server.crt',
   },
   db: {
     hosts: 'mongodb://127.0.0.1:27017/test',
