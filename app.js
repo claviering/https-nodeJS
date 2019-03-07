@@ -1,11 +1,12 @@
-const ip = require('ip');
+const ip = require('ip')
+const path = require('path')
 const app = require('express')()
 const debug = require('debug')('app')
-const router = require('./app/router')
-const config = require('./app/config');
-const middleware = require('./app/middleware');
-const httpsServer = require('./app/middleware/https')
-const server = require('./app/middleware/spdy');
+const router = require(path.resolve('./app/router'))
+const config = require(path.resolve('./app/config'))
+const middleware = require(path.resolve('./app/middleware'))
+const server = require(path.resolve('./app/middleware/spdy'))
+const httpsServer = require(path.resolve('./app/middleware/https'))
 
 middleware(app)
 router(app)

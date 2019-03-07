@@ -1,6 +1,7 @@
-const { client } = require('../middleware/redis');
-const debug = require('debug')('passport:default');
-const token = require('../utils/token');
+const path = require('path')
+const debug = require('debug')('passport:default')
+const token = require(path.resolve('.app//utils/token'))
+const { client } = require(path.resolve('./app/middleware/redis'))
 
 module.exports = {
   default: (req, res) => {
